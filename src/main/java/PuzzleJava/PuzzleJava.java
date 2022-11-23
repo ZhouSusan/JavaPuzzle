@@ -85,8 +85,15 @@ public class PuzzleJava {
            randStr.append(c);
        }
        String outputStr = randStr.toString();
-       System.out.format("\nYour random string is %s", outputStr);
        return outputStr;
+    }
+
+    public static void generateArrayOfRandomStrings(int size) {
+        String[] arrayOfRandomness = new String[size];
+        for (int i = 0; i < size; i++) {
+            arrayOfRandomness[i] = generateRandomString(5);
+            System.out.println(arrayOfRandomness[i]);
+        }
     }
 
     public static void printAllElementsOfArray(int[] arr) {
@@ -121,7 +128,10 @@ public class PuzzleJava {
         System.out.println(generateRandomNumber());
 
         System.out.println("\n####################################\n");
-        generateRandomString(5);
+        System.out.format("\nYour random string is %s", generateRandomString(5));
+
+        System.out.println("\n####################################\n");
+        generateArrayOfRandomStrings(10);
 
     }
 
