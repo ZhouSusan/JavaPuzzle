@@ -2,6 +2,7 @@ package PuzzleJava;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 
 public class PuzzleJava {
 
@@ -29,6 +30,31 @@ public class PuzzleJava {
         return filteredNameList;
     }
 
+    public static void shufflingAlphabet() {
+        ArrayList<Character> alphabetArr = new ArrayList<Character>();
+        for (char letter = 'a'; letter <= 'z'; letter++) {
+            alphabetArr.add(letter);
+        }
+
+        Collections.shuffle(alphabetArr);
+        Character firstChar = alphabetArr.get(0);
+
+        HashSet<Character> vowels = new HashSet<Character>();
+        vowels.add('a');
+        vowels.add('e');
+        vowels.add('i');
+        vowels.add('o');
+        vowels.add('u');
+
+        if (vowels.contains(firstChar)) {
+            System.out.format("Looks like your first character is a vowel: %s. The last letter of the shuffled array is %s.\n",
+                    firstChar, alphabetArr.get(25));
+        } else {
+            System.out.format("The last letter of the shuffled array is %s.\n The first letter is %s.\n",
+                    alphabetArr.get(25), firstChar);
+        }
+    }
+
     public static void printAllElementsOfArray(int[] arr) {
         for (int j = 0; j < arr.length; j++) {
             System.out.println(arr[j]);
@@ -49,6 +75,9 @@ public class PuzzleJava {
         filterNameList(namesList);
 
         System.out.println("####################################");
-        
+        shufflingAlphabet();
+
     }
+
+
 }
