@@ -76,6 +76,19 @@ public class PuzzleJava {
         return randomNumArr;
     }
 
+    public static String generateRandomString(int size) {
+       char [] letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".toCharArray();
+       StringBuilder randStr = new StringBuilder(size);
+       Random rand = new Random();
+       for (int s = 0; s < size; s++) {
+           char c = letters[rand.nextInt(letters.length)];
+           randStr.append(c);
+       }
+       String outputStr = randStr.toString();
+       System.out.format("\nYour random string is %s", outputStr);
+       return outputStr;
+    }
+
     public static void printAllElementsOfArray(int[] arr) {
         for (int j = 0; j < arr.length; j++) {
             System.out.println(arr[j]);
@@ -103,6 +116,13 @@ public class PuzzleJava {
 
         System.out.println("\n####################################");
         getTenRandomNums();
+
+        System.out.println("\n####################################\n");
+        System.out.println(generateRandomNumber());
+
+        System.out.println("\n####################################\n");
+        generateRandomString(5);
+
     }
 
 
