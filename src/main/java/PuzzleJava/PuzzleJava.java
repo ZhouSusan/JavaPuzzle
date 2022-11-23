@@ -3,6 +3,7 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Random;
 
 public class PuzzleJava {
 
@@ -55,6 +56,14 @@ public class PuzzleJava {
         }
     }
 
+    public static int generateRandomNumber() {
+        Random rand = new Random();
+        int lowerBound = 55;
+        int upperBound = 100;
+        int randNum = rand.nextInt(upperBound - lowerBound) + lowerBound;
+        return randNum;
+    }
+
     public static void printAllElementsOfArray(int[] arr) {
         for (int j = 0; j < arr.length; j++) {
             System.out.println(arr[j]);
@@ -76,6 +85,11 @@ public class PuzzleJava {
 
         System.out.println("####################################");
         shufflingAlphabet();
+
+        System.out.println("####################################");
+        System.out.format("Your random number between 55- 100 is %s", generateRandomNumber());
+
+        System.out.println("\n####################################");
 
     }
 
