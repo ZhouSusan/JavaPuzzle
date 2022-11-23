@@ -64,6 +64,15 @@ public class PuzzleJava {
         return randNum;
     }
 
+    public static int[] getTenRandomNums() {
+        int[] randomNumArr = new int[10];
+        for (int r = 0; r < randomNumArr.length; r++) {
+            randomNumArr[r] = generateRandomNumber();
+        }
+        printAllElementsOfArray(randomNumArr);
+        return randomNumArr;
+    }
+
     public static void printAllElementsOfArray(int[] arr) {
         for (int j = 0; j < arr.length; j++) {
             System.out.println(arr[j]);
@@ -90,7 +99,7 @@ public class PuzzleJava {
         System.out.format("Your random number between 55- 100 is %s", generateRandomNumber());
 
         System.out.println("\n####################################");
-
+        getTenRandomNums();
     }
 
 
