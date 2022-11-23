@@ -1,1 +1,1 @@
-# JavaPuzzle
+# PuzzleJava
