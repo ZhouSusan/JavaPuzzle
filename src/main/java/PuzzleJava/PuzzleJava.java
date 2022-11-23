@@ -69,7 +69,10 @@ public class PuzzleJava {
         for (int r = 0; r < randomNumArr.length; r++) {
             randomNumArr[r] = generateRandomNumber();
         }
+
+        Arrays.sort(randomNumArr);
         printAllElementsOfArray(randomNumArr);
+        System.out.format("Min Value: %s, Max Value: %s", randomNumArr[0], randomNumArr[9]);
         return randomNumArr;
     }
 
